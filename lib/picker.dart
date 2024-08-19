@@ -71,7 +71,7 @@ class Picker {
   final IconThemeData? selectedIconTheme;
 
   /// Text scaling factor
-  final double? textScaleFactor;
+  final TextScaler? textScaleFactor;
 
   final EdgeInsetsGeometry? columnPadding;
   final Color? backgroundColor, headerColor, containerColor;
@@ -479,7 +479,7 @@ class PickerWidgetState<T> extends State<_PickerWidget> {
       child: picker.title == null
           ? SizedBox()
           : DefaultTextStyle(
-              style: (theme!.textTheme.headline6 ?? theme!.textTheme.titleLarge)
+              style: (theme!.textTheme.headlineSmall ?? theme!.textTheme.titleLarge)
                       ?.copyWith(
                     fontSize: Picker.DefaultTextSize,
                   ) ??
@@ -520,7 +520,7 @@ class PickerWidgetState<T> extends State<_PickerWidget> {
           onPressed: onPressed,
           child: Text(_txt,
               overflow: TextOverflow.ellipsis,
-              textScaleFactor: MediaQuery.of(context).textScaleFactor,
+              textScaler: MediaQuery.of(context).textScaler,
               style: textStyle));
     } else {
       return textStyle == null
@@ -736,7 +736,7 @@ abstract class PickerAdapter<T> {
                         : Colors.black87,
                     fontFamily: theme == null
                         ? ""
-                        : theme.textTheme.headline6?.fontFamily,
+                        : theme.textTheme.headlineSmall?.fontFamily,
                     fontSize: Picker.DefaultTextSize),
             child: child != null
                 ? (isSel && picker!.selectedIconTheme != null
@@ -746,7 +746,7 @@ abstract class PickerAdapter<T> {
                       )
                     : child)
                 : Text(text ?? "",
-                    textScaleFactor: picker!.textScaleFactor,
+                textScaler: picker!.textScaleFactor,
                     style: (isSel ? picker!.selectedTextStyle : null))));
   }
 
@@ -781,7 +781,7 @@ abstract class PickerAdapter<T> {
                     fontSize: _txtSize,
                     fontFamily: theme == null
                         ? ""
-                        : theme.textTheme.headline6?.fontFamily),
+                        : theme.textTheme.headlineSmall?.fontFamily),
             child: Wrap(
               children: items,
             )));
