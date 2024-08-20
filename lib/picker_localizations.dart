@@ -28,7 +28,7 @@ class PickerLocalizations extends PickerLocalizationsBase {
 
   static PickerLocalizations of(BuildContext context) {
     return Localizations.of<PickerLocalizations>(
-            context, PickerLocalizations) ??
+        context, PickerLocalizations) ??
         _static;
   }
 
@@ -37,10 +37,10 @@ class PickerLocalizations extends PickerLocalizationsBase {
   /// Register custom language
   static registerCustomLanguage(String name,
       {String? cancelText,
-      String? confirmText,
-      List<String>? ampm,
-      List<String>? months,
-      List<String>? monthsLong}) {
+        String? confirmText,
+        List<String>? ampm,
+        List<String>? months,
+        List<String>? monthsLong}) {
     if (name.isEmpty) return;
     if (ampm != null && ampm.length != 2) {
       throw Exception('ampm array length must be 2');
@@ -89,6 +89,34 @@ class PickerLocalizations extends PickerLocalizationsBase {
       'cancelText': 'Cancel',
       'confirmText': 'Confirm',
       'ampm': ['AM', 'PM'],
+      'months': [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec"
+      ],
+      'monthsLong': [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+      ],
     },
     'ja': {
       'cancelText': 'キャンセル',
@@ -99,6 +127,34 @@ class PickerLocalizations extends PickerLocalizationsBase {
       'cancelText': '取消',
       'confirmText': '确定',
       'ampm': ['上午', '下午'],
+      'months': [
+        '1',
+        '2',
+        '3',
+        '4',
+        '5',
+        '6',
+        '7',
+        '8',
+        '9',
+        '10',
+        '11',
+        '12',
+      ],
+      'monthsLong': [
+        '一月',
+        '二月',
+        '三月',
+        '四月',
+        '五月',
+        '六月',
+        '七月',
+        '八月',
+        '九月',
+        '十月',
+        '十一月',
+        '十二月',
+      ],
     },
     'ko': {
       'cancelText': '취소',
